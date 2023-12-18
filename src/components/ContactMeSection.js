@@ -28,7 +28,7 @@ const LandingSection = () => {
       .required('Required'),
     email: Yup.string().email('Invalid email address').required('Required'),
     comment: Yup.string()
-      .max(50, 'Character count (50) exceeded')
+      .min(25, 'Must be at least 25 characters')
       .required('Required'),
   })
 
@@ -36,7 +36,7 @@ const LandingSection = () => {
     initialValues: {
       firstName: '',
       email: '',
-      type: '',
+      type: 'hireMe',
       comment: '',
     },
     onSubmit: (values) => {
@@ -48,8 +48,8 @@ const LandingSection = () => {
   useEffect(() => {
     if (!response) return
 
+    if (response.type === 'success') formik.resetForm()
     onOpen(response.type, response.message)
-    formik.resetForm()
   }, [response])
 
   return (
