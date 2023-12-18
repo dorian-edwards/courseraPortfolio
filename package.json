@@ -1,4 +1,5 @@
 {
+  "homepage": "https://dorian-edwards.github.io/courseraPortfolio",
   "name": "graded-assessment",
   "version": "0.1.0",
   "private": true,
@@ -43,6 +44,7 @@
     ]
   },
   "devDependencies": {
+    "gh-pages": "^6.1.0",
     "prettier": "^2.7.1"
   }
 }
